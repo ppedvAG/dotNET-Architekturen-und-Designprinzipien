@@ -8,11 +8,17 @@ namespace HalloSingelton
     {
 
         private static Logger instance = null;
+        private static Object syncObj = new Object();
+
         public static Logger Instance
         {
-            get {
-                if (instance == null)
-                    instance = new Logger();
+            get
+            {
+                lock (syncObj)
+                {
+                    if (instance == null)
+                        instance = new Logger();
+                }
 
                 return instance;
             }
@@ -26,18 +32,22 @@ namespace HalloSingelton
 
         public void Log(string txt, LogLevel level = LogLevel.Info)
         {
-            var oldCol = Console.ForegroundColor;
-
-            Console.ForegroundColor = level switch
+            lock (syncObj)
             {
-                LogLevel.Error => ConsoleColor.Red,
-                LogLevel.Warn => ConsoleColor.DarkYellow,
-                _ => ConsoleColor.Green,
-            };
+                var oldCol = Console.ForegroundColor;
 
-            Console.WriteLine($"[{DateTime.Now}] {txt}");
-            Console.ForegroundColor = oldCol;
+                Console.ForegroundColor = level switch
+                {
+                    LogLevel.Error => ConsoleColor.Red,
+                    LogLevel.Warn => ConsoleColor.DarkYellow,
+                    _ => ConsoleColor.Green,
+                };
+
+                Console.WriteLine($"[{DateTime.Now}] {txt}");
+                Console.ForegroundColor = oldCol;
+            }
         }
+
     }
 
     public enum LogLevel
