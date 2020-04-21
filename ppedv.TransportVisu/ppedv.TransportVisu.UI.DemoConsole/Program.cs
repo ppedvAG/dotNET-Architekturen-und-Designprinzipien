@@ -16,6 +16,7 @@ namespace ppedv.TransportVisu.UI.DemoConsole
 
             Console.WriteLine("🍻");
 
+            //kein bier vor 4 !!!
             var core = new Core();
 
             foreach (var a in core.Repository.GetAll<Artikel>())
