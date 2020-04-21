@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ppedv.TransportVisu.Model;
 
 namespace ppedv.TransportVisu.Data.EF.Tests
 {
@@ -19,5 +20,56 @@ namespace ppedv.TransportVisu.Data.EF.Tests
                 Assert.IsTrue(con.Database.Exists());
             }
         }
+
+        [TestMethod]
+        public void EfContext_can_CRUD_Waschmaschine()
+        {
+            var wm = new Waschmaschine()
+            {
+                Bezeichnung = "Schrubbeimer",
+                Hersteller = "GL",
+                Waschmittel = $"Aral {Guid.NewGuid()}"
+            };
+
+            var newWasch = $"Bersil {Guid.NewGuid()}";
+
+            //CREATE
+            using (var con = new EfContext())
+            {
+                con.Waschmaschinen.Add(wm);
+                con.SaveChanges();
+            }
+
+            //READ
+            using (var con = new EfContext())
+            {
+                var loaded = con.Waschmaschinen.Find(wm.Id);
+                Assert.IsNotNull(loaded);
+                Assert.AreEqual(wm.Waschmittel, loaded.Waschmittel);
+                //UPDATE
+                loaded.Waschmittel = newWasch;
+                con.SaveChanges();
+            }
+
+            //Check UPDATE
+            using (var con = new EfContext())
+            {
+                var loaded = con.Waschmaschinen.Find(wm.Id);
+                Assert.AreEqual(newWasch, loaded.Waschmittel);
+                //DELETE
+                con.Waschmaschinen.Remove(loaded);
+                con.SaveChanges();
+            }
+
+            //Check DELETE
+            using (var con = new EfContext())
+            {
+                var loaded = con.Waschmaschinen.Find(wm.Id);
+                Assert.IsNull(loaded);
+            }
+        }
+
+
+
     }
 }

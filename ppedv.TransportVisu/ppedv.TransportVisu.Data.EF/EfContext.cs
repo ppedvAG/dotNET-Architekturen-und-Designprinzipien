@@ -1,4 +1,5 @@
 ﻿using ppedv.TransportVisu.Model;
+using System;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
@@ -28,6 +29,8 @@ namespace ppedv.TransportVisu.Data.EF
                                                 .HasColumnName("Bezi")
                                                 .HasMaxLength(79)
                                                 .IsRequired();
+
+            modelBuilder.Properties<DateTime>().Configure(c => c.HasColumnType("datetime2"));
         }
 
 
