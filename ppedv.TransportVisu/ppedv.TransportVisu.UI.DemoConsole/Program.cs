@@ -14,6 +14,8 @@ namespace ppedv.TransportVisu.UI.DemoConsole
         {
             Console.WriteLine("*** TransportViso v0.1 Demo Console ***");
 
+            Console.WriteLine("🍻");
+
             var core = new Core();
 
             foreach (var a in core.Repository.GetAll<Artikel>())
