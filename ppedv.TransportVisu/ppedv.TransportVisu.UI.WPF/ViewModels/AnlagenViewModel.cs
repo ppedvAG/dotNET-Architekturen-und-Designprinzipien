@@ -63,23 +63,16 @@ namespace ppedv.TransportVisu.UI.WPF.ViewModels
         }
     }
 
-    public class DatenplatzViewItem : ViewModelBase
+    public class DatenplatzViewItem : INotifyPropertyChanged
     {
-        private string text;
 
         public Datenplatz Datenplatz { get; set; }
         public int PosLeft { get; set; }
         public int PosTop { get; set; }
 
 
-        public string Text
-        {
-            get => text; 
-            set
-            {
-                text = value;
-                MeChanged();
-            }
-        }
+        public string Text { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
