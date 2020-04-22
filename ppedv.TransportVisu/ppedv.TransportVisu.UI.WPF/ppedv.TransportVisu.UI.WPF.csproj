@@ -64,6 +64,7 @@
     <Compile Include="ViewModels\AnlagenViewModel.cs" />
     <Compile Include="ViewModels\ArtikelViewModel.cs" />
     <Compile Include="ViewModels\SensorenViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\AnlagenView.xaml.cs">
       <DependentUpon>AnlagenView.xaml</DependentUpon>
     </Compile>
@@ -124,6 +125,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ppedv.TransportVisu.Logic\ppedv.TransportVisu.Logic.csproj">
+      <Project>{7917b594-7017-427a-afb3-01408233a5d0}</Project>
+      <Name>ppedv.TransportVisu.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ppedv.TransportVisu.Model\ppedv.TransportVisu.Model.csproj">
+      <Project>{b3c384ad-556f-4c67-a688-b7c28997a665}</Project>
+      <Name>ppedv.TransportVisu.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll">
+      <Link>EntityFramework.SqlServer.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

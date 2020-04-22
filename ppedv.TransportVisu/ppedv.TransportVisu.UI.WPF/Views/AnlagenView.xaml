@@ -4,40 +4,47 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ppedv.TransportVisu.UI.WPF.Views"
+             xmlns:vm="clr-namespace:ppedv.TransportVisu.UI.WPF.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-
+    <UserControl.DataContext>
+        <vm:AnlagenViewModel/>
+    </UserControl.DataContext>
     <DockPanel>
         <WrapPanel DockPanel.Dock="Top">
             <GroupBox Header="Anzeigen">
                 <WrapPanel>
-                    <RadioButton>Kundenummer</RadioButton>
+                    <RadioButton IsChecked="{Binding ZeigeKundennummer}">Kundenummer</RadioButton>
                     <RadioButton>Artikelnummer</RadioButton>
                 </WrapPanel>
             </GroupBox>
-            <Button Click="Button_Click">Lade Datenpunkte</Button>
         </WrapPanel>
-        <ItemsControl Name="iccccc">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <Canvas/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            <ItemsControl.ItemContainerStyle>
-                <Style TargetType="ContentPresenter">
-                    <Setter Property="Canvas.Top" Value="{Binding Top}"/>
-                    <Setter Property="Canvas.Left" Value="{Binding Left}"/>
-                </Style>
-            </ItemsControl.ItemContainerStyle>
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Button >
-
-                        <TextBlock Text="{Binding txtt}"/>
-                    </Button>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+        <TabControl>
+            <TabItem Header="Anzeige">
+                <ItemsControl Background="Beige" ItemsSource="{Binding DatenListe}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Canvas/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemContainerStyle>
+                        <Style TargetType="ContentPresenter">
+                            <Setter Property="Canvas.Top" Value="{Binding PosTop}"/>
+                            <Setter Property="Canvas.Left" Value="{Binding PosLeft}"/>
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button>
+                                <TextBlock Text="{Binding Text}"/>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </TabItem>
+            <TabItem Header="Grid">
+                <DataGrid DockPanel.Dock="Left" ItemsSource="{Binding DatenListe}"/>
+            </TabItem>
+        </TabControl>
     </DockPanel>
-
 </UserControl>

@@ -25,6 +25,8 @@ namespace ppedv.TransportVisu.Data.EF
             modelBuilder.Entity<Puffer>().ToTable("Puffer");
             modelBuilder.Entity<Beladeposition>().ToTable("Beladepositionen");
 
+            modelBuilder.Entity<Datenplatz>().HasOptional<Waesche>(x => x.Waesche).WithRequired(x => x.Datenplatz);
+
             modelBuilder.Entity<Waschmaschine>().Property(x => x.Bezeichnung)
                                                 .HasColumnName("Bezi")
                                                 .HasMaxLength(79)
