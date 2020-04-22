@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="ppedv.TransportVisu.UI.WPF.Views.SensorenView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ppedv.TransportVisu.UI.WPF.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DockPanel>
+        <DataGrid DockPanel.Dock="Left" MinWidth="200"/>
+        <DockPanel Margin="24">
+            <WrapPanel DockPanel.Dock="Top">
+                <Button>Speichern</Button>
+                <Button>Neu</Button>
+                <Button>Löschen</Button>
+            </WrapPanel>
+            <Grid  Margin="0,12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label>Bezeichnug</Label>
+                <TextBox Grid.Column="1"/>
+                <Label Grid.Row="1">Artikelnummer</Label>
+                <TextBox Grid.Row="1" Grid.Column="2" />
+                <Label Grid.Row="2">Kundenkummer</Label>
+                <TextBox Grid.Row="2" Grid.Column="2" />
+            </Grid>
+        </DockPanel>
+    </DockPanel>
+</UserControl>
