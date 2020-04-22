@@ -28,6 +28,13 @@ namespace ppedv.TransportVisu.UI.DemoConsole
                 }
             }
 
+            //nur wenn es keinen Belegsensor gibt, erstelle DemoDaten
+            if (!core.Repository.GetAll<Sensor>().Any(x => x.Bezeichnung.StartsWith("Belegsensor")))
+                core.SensorServices.CreateDemoSensorDaten();
+
+            var sensor = core.SensorServices.GetSensorWithMostOffSet();
+            Console.WriteLine($"Schlimmster Sensor: {sensor.Bezeichnung}");
+
             Console.WriteLine("Ende");
             Console.ReadKey();
         }
