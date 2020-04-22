@@ -61,6 +61,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\AnlagenViewModel.cs" />
+    <Compile Include="ViewModels\ArtikelViewModel.cs" />
+    <Compile Include="ViewModels\SensorenViewModel.cs" />
     <Compile Include="Views\AnlagenView.xaml.cs">
       <DependentUpon>AnlagenView.xaml</DependentUpon>
     </Compile>

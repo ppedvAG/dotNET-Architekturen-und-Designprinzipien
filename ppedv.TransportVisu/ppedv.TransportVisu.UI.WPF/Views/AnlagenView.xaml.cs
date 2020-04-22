@@ -23,6 +23,27 @@ namespace ppedv.TransportVisu.UI.WPF.Views
         public AnlagenView()
         {
             InitializeComponent();
+
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var ran = new Random();
+            var data = new List<DpMitPos>();
+            data.Add(new DpMitPos() { txtt = "lalallalalalal", Left = ran.Next(0, 500), Top = ran.Next(0, 200) });
+            data.Add(new DpMitPos() { txtt = "234324324", Left = ran.Next(0, 500), Top = ran.Next(0, 200) });
+            data.Add(new DpMitPos() { txtt = "ewrwer", Left = ran.Next(0, 500), Top = ran.Next(0, 200) });
+            data.Add(new DpMitPos() { txtt = "xvcvxvc", Left = ran.Next(0, 500), Top = ran.Next(0, 200) });
+            iccccc.ItemsSource = data;
         }
     }
+
+    public class DpMitPos
+    {
+        public string txtt { get; set; }
+        public int Left { get; set; }
+        public int Top { get; set; }
+    }
+
 }
