@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.TransportVisu.Model", "ppedv.TransportVisu.Model\ppedv.TransportVisu.Model.csproj", "{B3C384AD-556F-4C67-A688-B7C28997A665}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.TransportVisu.Model", "ppedv.TransportVisu.Model\ppedv.TransportVisu.Model.csproj", "{B3C384AD-556F-4C67-A688-B7C28997A665}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.TransportVisu.Data.EF", "ppedv.TransportVisu.Data.EF\ppedv.TransportVisu.Data.EF.csproj", "{A5644C6C-6AB3-405D-AD5A-A05DD6E5A28A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.TransportVisu.Data.EF.Tests", "ppedv.TransportVisu.Data.EF.Tests\ppedv.TransportVisu.Data.EF.Tests.csproj", "{66E5895E-DC7D-4FC1-8C92-154353AEAACD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.TransportVisu.Logic", "ppedv.TransportVisu.Logic\ppedv.TransportVisu.Logic.csproj", "{7917B594-7017-427A-AFB3-01408233A5D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.TransportVisu.Logic", "ppedv.TransportVisu.Logic\ppedv.TransportVisu.Logic.csproj", "{7917B594-7017-427A-AFB3-01408233A5D0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{6EDFE824-458A-4730-B9DD-55B3F6835374}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.TransportVisu.Logic.Tests", "ppedv.TransportVisu.Logic.Tests\ppedv.TransportVisu.Logic.Tests.csproj", "{D76A7313-375A-49EF-9574-2C7F3B8F8F49}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logic", "Logic", "{4AA6662A-CAC2-4B0F-95BC-ABB311FB3C30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.TransportVisu.UI.WPF", "ppedv.TransportVisu.UI.WPF\ppedv.TransportVisu.UI.WPF.csproj", "{3F7DF3A8-A062-44C3-B4AD-3E045209BAEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{D76A7313-375A-49EF-9574-2C7F3B8F8F49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D76A7313-375A-49EF-9574-2C7F3B8F8F49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D76A7313-375A-49EF-9574-2C7F3B8F8F49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F7DF3A8-A062-44C3-B4AD-3E045209BAEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F7DF3A8-A062-44C3-B4AD-3E045209BAEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F7DF3A8-A062-44C3-B4AD-3E045209BAEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F7DF3A8-A062-44C3-B4AD-3E045209BAEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +67,7 @@ Global
 		{7917B594-7017-427A-AFB3-01408233A5D0} = {4AA6662A-CAC2-4B0F-95BC-ABB311FB3C30}
 		{E777803A-97FB-4577-BBE6-01CD304A8287} = {D890AACB-5237-4626-913B-A20CCF746E3F}
 		{D76A7313-375A-49EF-9574-2C7F3B8F8F49} = {4AA6662A-CAC2-4B0F-95BC-ABB311FB3C30}
+		{3F7DF3A8-A062-44C3-B4AD-3E045209BAEF} = {D890AACB-5237-4626-913B-A20CCF746E3F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {62397043-0B7A-4615-B694-F07CDDD7A954}
